@@ -1,6 +1,8 @@
 ajv-schema-builder
 =========
 
+[![Build Status](https://travis-ci.org/RomAnoX/ajv-schema-builder.svg?branch=master)](https://travis-ci.org/RomAnoX/ajv-schema-builder)
+
 A Fluent schema builder for [AJV](https://github.com/epoberezkin/ajv)
 
 ## Installation
