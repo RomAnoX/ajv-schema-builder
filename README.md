@@ -2,6 +2,7 @@ ajv-schema-builder
 =========
 
 [![Build Status](https://travis-ci.org/RomAnoX/ajv-schema-builder.svg?branch=master)](https://travis-ci.org/RomAnoX/ajv-schema-builder)
+[![Coverage Status](https://coveralls.io/repos/github/RomAnoX/ajv-schema-builder/badge.svg?branch=master)](https://coveralls.io/github/RomAnoX/ajv-schema-builder?branch=master)
 
 A Fluent schema builder for [AJV](https://github.com/epoberezkin/ajv)
 
