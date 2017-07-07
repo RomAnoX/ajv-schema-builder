@@ -18,10 +18,6 @@ class PropertiesKeyword extends Keyword {
     return this.properties;
   }
 
-  get length() {
-    return Object.keys(this.properties).length;
-  }
-
   addProperty(name, keyword) {
     Keyword.validate(keyword);
     this.properties[name] = keyword;

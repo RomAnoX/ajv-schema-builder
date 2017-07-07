@@ -10,6 +10,10 @@ describe('Schema builder', () => {
         name: asb.string(),
         type: asb.const('test'),
         role: asb.enum(['user', 'admin']),
+        age: asb.number(),
+        enabled: asb.boolean().default(true),
+        start_date: asb.oneOf([asb.string().format('date'), asb.integer()]),
+        end_date: asb.anyOf([asb.string().format('date'), asb.integer()]),
         departments: asb.array().items(
           asb.object().properties({
             id: asb.integer().default(2),
@@ -26,6 +30,14 @@ describe('Schema builder', () => {
         name: { type: 'string' },
         type: { const: 'test' },
         role: { enum: ['user', 'admin'] },
+        age: { type: 'number' },
+        enabled: { type: 'boolean', default: true },
+        start_date: {
+          oneOf: [{ type: 'string', format: 'date' }, { type: 'integer' }],
+        },
+        end_date: {
+          anyOf: [{ type: 'string', format: 'date' }, { type: 'integer' }],
+        },
         departments: {
           type: 'array',
           items: {

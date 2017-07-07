@@ -21,6 +21,10 @@ describe('Properties keyword', () => {
     expect(keyword.json()).to.deep.eq({ properties: { foo: {} } });
   });
 
+  it('fails with a no object properties', () => {
+    expect(() => new PropertiesKeyword('object')).to.throw();
+  });
+
   it('fails with a no keyword property', () => {
     expect(() => new PropertiesKeyword({ foo: 'bar' })).to.throw();
   });
