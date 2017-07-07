@@ -1,0 +1,21 @@
+{
+  "name": "ajv-schema-builder",
+  "version": "0.0.1",
+  "description": "Fluent AJV schema builder",
+  "main": "./dist/index.js",
+  "repository": "git@github.com:RomAnoX/ajv-schema-builder.git",
+  "author": "Ulises Acosta <ulises.xsoft@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --reporter spec",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "babel-cli": "6",
+    "babel-core": "6",
+    "babel-preset-es2015": "6",
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
