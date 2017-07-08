@@ -1,6 +1,6 @@
 {
   "name": "ajv-schema-builder",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fluent AJV schema builder",
   "main": "./dist/index.js",
   "repository": "git@github.com:RomAnoX/ajv-schema-builder.git",
