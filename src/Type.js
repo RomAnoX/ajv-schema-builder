@@ -1,4 +1,5 @@
 const Keyword = require('./Keyword');
+const Default = require('./Default');
 
 const TYPES = [
   'number',
@@ -17,9 +18,14 @@ class TypeKeyword extends Keyword {
   }
 
   set value(value) {
-    if (!TYPES.includes(value)) {
-      throw new Error('The type is invalid');
-    }
+    const list = Array.isArray(value) ? value : [value];
+
+    list.forEach(item => {
+      if (!TYPES.includes(item)) {
+        throw new Error('The type is invalid');
+      }
+    });
+
     this.type = value;
   }
 
@@ -27,8 +33,13 @@ class TypeKeyword extends Keyword {
     return this.type;
   }
 
+  default(value) {
+    this.addKeyword(new Default(value));
+    return this;
+  }
+
   json(context = {}) {
-    return Object.assign(context, { type: this.value });
+    return Object.assign(this.keywordsContext(context), { type: this.value });
   }
 }
 

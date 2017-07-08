@@ -7,7 +7,7 @@
   "author": "Ulises Acosta <ulises.xsoft@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register --reporter spec",
+    "test": "mocha --recursive --compilers js:babel-core/register --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build"

@@ -4,6 +4,7 @@ const StringKeyword = require('./String');
 const IntegerKeyword = require('./Integer');
 const NumberKeyword = require('./Number');
 const BooleanKeyword = require('./Boolean');
+const TypeKeyword = require('./Type');
 const EnumKeyword = require('./Enum');
 const ConstKeyword = require('./Const');
 const OneOfKeyword = require('./OneOf');
@@ -17,6 +18,7 @@ module.exports = {
   number: () => new NumberKeyword(),
   boolean: () => new BooleanKeyword(),
 
+  type: value => new TypeKeyword(value),
   enum: value => new EnumKeyword(value),
   const: value => new ConstKeyword(value),
   oneOf: value => new OneOfKeyword(value),

@@ -6,7 +6,7 @@ describe('Schema builder', () => {
     const schema = asb
       .object()
       .properties({
-        id: asb.integer().default(1),
+        id: asb.type(['string', 'integer']).default(1),
         name: asb.string(),
         type: asb.const('test'),
         role: asb.enum(['user', 'admin']),
@@ -26,7 +26,7 @@ describe('Schema builder', () => {
     expect(schema.json()).to.deep.eq({
       type: 'object',
       properties: {
-        id: { type: 'integer', default: 1 },
+        id: { type: ['string', 'integer'], default: 1 },
         name: { type: 'string' },
         type: { const: 'test' },
         role: { enum: ['user', 'admin'] },
